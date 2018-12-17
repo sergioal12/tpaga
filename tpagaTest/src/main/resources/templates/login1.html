@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+		<title>Test Sergio Alejandro Plata otra version de feo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+    <body class="is-preload">
+    	<section id="intro" class="main">
+			<div class="spotlight">
+			<div class="content">
+        <div th:if="${param.error}">
+            <p>Usuario o password errados.</p>
+        </div>
+        <div th:if="${param.logout}">
+           <p> Logout exitoso</p>
+        </div>
+        <form  th:action="@{/login}" method="post" >
+            <div><label> User Name : <input type="text" name="username"/> </label></div>
+            <div><label> Password: <input type="password" name="password"/> </label></div>
+            <div><input type="submit" value="Sign In"/></div>
+        </form>
+        </div>				
+        </div>
+		</section>
+    </body>
+</html>
